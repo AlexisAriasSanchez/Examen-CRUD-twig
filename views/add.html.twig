@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CRUD Example - Add Item{% endblock %}
+
+{% block content %}
+    <h2>Add Item</h2>
+    <form action="/items/add" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" name="age" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="occupation">Occupation:</label>
+            <input type="text" name="occupation" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+    <a href="/items" class="btn btn-secondary">Back to List</a>
+{% endblock %}

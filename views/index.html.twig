@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CRUD Example - Items{% endblock %}
+
+{% block content %}
+    <h2>List of Items</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Occupation</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.age }}</td>
+                    <td>{{ item.occupation }}</td>
+                    <td>
+                        <a href="/items/edit/{{ loop.index0 }}" class="btn btn-primary">Edit</a>
+                        <a href="/items/delete/{{ loop.index0 }}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/items/add" class="btn btn-success">Add Item</a>
+{% endblock %}
